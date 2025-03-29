@@ -1,13 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '@/components/Header';
+import RFIDScanner from '@/components/RFIDScanner';
+import ItemRegistrationForm from '@/components/ItemRegistrationForm';
+import InventoryList from '@/components/InventoryList';
+import { InventoryProvider } from '@/context/InventoryContext';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <InventoryProvider>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 container mx-auto py-8 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <RFIDScanner />
+            <ItemRegistrationForm />
+          </div>
+          <InventoryList />
+        </main>
+        <footer className="bg-muted py-4 text-center text-sm text-muted-foreground">
+          RFID Inventory Ninja &copy; {new Date().getFullYear()}
+        </footer>
       </div>
-    </div>
+    </InventoryProvider>
   );
 };
 
