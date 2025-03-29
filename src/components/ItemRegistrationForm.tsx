@@ -31,10 +31,10 @@ const ItemRegistrationForm = () => {
   };
 
   return (
-    <Card className="w-full">
-      <CardHeader>
+    <Card className="w-full transition-all duration-300 hover:shadow-lg overflow-hidden animate-scale-in">
+      <CardHeader className="bg-gradient-to-r from-primary/10 to-secondary/10">
         <CardTitle className="flex items-center gap-2">
-          <Plus className="h-5 w-5" />
+          <Plus className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />
           Register New Item
         </CardTitle>
         <CardDescription>
@@ -42,9 +42,9 @@ const ItemRegistrationForm = () => {
         </CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="productName">Product Name</Label>
+        <CardContent className="space-y-4 p-6">
+          <div className="space-y-3 transition-all duration-300">
+            <Label htmlFor="productName" className="text-sm font-medium">Product Name</Label>
             <Input
               id="productName"
               value={productName}
@@ -52,10 +52,11 @@ const ItemRegistrationForm = () => {
               placeholder="Enter product name"
               required
               disabled={!currentScannedUID}
+              className="transition-all duration-200 focus:ring-primary"
             />
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="expiryDate">Expiry Date</Label>
+          <div className="space-y-3 transition-all duration-300">
+            <Label htmlFor="expiryDate" className="text-sm font-medium">Expiry Date</Label>
             <Input
               id="expiryDate"
               type="date"
@@ -63,13 +64,14 @@ const ItemRegistrationForm = () => {
               onChange={(e) => setExpiryDate(e.target.value)}
               required
               disabled={!currentScannedUID}
+              className="transition-all duration-200 focus:ring-primary"
             />
           </div>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="p-6 pt-2">
           <Button 
             type="submit" 
-            className="w-full"
+            className="w-full transition-all duration-300 hover:shadow-md"
             disabled={!currentScannedUID || !productName || !expiryDate}
           >
             Register Item
