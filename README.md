@@ -4,7 +4,7 @@ A modern inventory management system using RFID technology for efficient trackin
 
 ## Project Structure
 
-This project is organized into two main components:
+This project is organized into three main components:
 
 ### Frontend
 Located in the `frontend` branch, this contains the React-based user interface that provides:
@@ -20,12 +20,20 @@ Located in the `backend` branch, this contains the server-side implementation fe
 - Database management
 - Authentication and authorization
 
+### Arduino
+Located in the `arduino` branch, this contains the hardware implementation featuring:
+- RFID reader code for Arduino Mega
+- Serial communication setup
+- Hardware wiring instructions
+
 ## Getting Started
 
 ### Prerequisites
 - Node.js (v14 or higher)
 - Python 3.8 or higher
-- RFID reader hardware
+- Arduino IDE (v1.8.x or higher)
+- RFID reader hardware (MFRC522 module)
+- Arduino Mega (or compatible board)
 - Git
 
 ### Installation
@@ -51,6 +59,15 @@ pip install -r requirements.txt
 python server.js
 ```
 
+4. Arduino Setup:
+```bash
+git checkout arduino
+```
+Then follow the instructions in `arduino/README.md` to:
+- Install required libraries
+- Wire the RFID reader
+- Upload the code to your Arduino
+
 ## Features
 
 - Real-time RFID scanning
@@ -59,6 +76,7 @@ python server.js
 - Data visualization
 - Export/Import functionality
 - Mobile responsive design
+- Hardware integration with Arduino
 
 ## Contributing
 
