@@ -76,3 +76,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Your Name - Bahlpratham@gmail.com
 Project Link: https://github.com/yourusername/rfid-inventory-ninja
+
+## Video Link
+https://drive.google.com/file/d/1j2D-OuQa8ZNE4eKVWxW6hMzlgqlkPxD2/view?usp=sharing
